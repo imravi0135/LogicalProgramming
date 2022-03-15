@@ -8,20 +8,32 @@ namespace LogicalProgramming
 {
     internal class LogicalProgram
     {
-        public void Fibonacci()
+        public void Perfect()
         {
-            int num1 = 0, num2 = 1, num3, i, num;
-            Console.WriteLine("Enter the number:- ");
+            int num, sum = 0, n;
+            Console.Write("enter the Number");
             num = int.Parse(Console.ReadLine());
-            Console.Write(num1 + " " + num2 + " ");
-            for (i = 2; i < num; i++)
+            n = num;
+            for (int i = 1; i < num; i++)
             {
-                num3 = num1 + num2;
-                Console.Write(num3 + " ");
-                num1 = num2;
-                num2 = num3;
+                if (num % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            if (sum == n)
+            {
+                Console.WriteLine("\n Entered number is a perfect number");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("\n Entered number is not a perfect number");
+                Console.ReadLine();
             }
         }
     }
+        
+    
 }
 
