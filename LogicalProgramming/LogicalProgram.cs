@@ -8,21 +8,33 @@ namespace LogicalProgramming
 {
     internal class LogicalProgram
     {
-        public void Reverse()
+        public void CouponsNumbers()
         {
-            Console.WriteLine("Enter the Number to check Reverse number");
-            int Number = Convert.ToInt32(Console.ReadLine());
-            int Reverse = 0;
-            while (Number != 0)
+            Console.WriteLine("Enter the number of distinct coupons you want to generate :");
+            int N = Convert.ToInt32(Console.ReadLine());
+            Random random = new Random();
+            int[] coupomCollection = new int[N];
+            for (int i = 0; i <= N - 1;)
             {
-                int remainder = Number % 10;
-                Reverse = (Reverse * 10) + remainder;
-                Number = Number / 10;
+                int coupon = random.Next(1001, 2001);
+                if ((coupon.CompareTo(coupomCollection[i])) == 0)
+                {
+                    continue;
+                }
+                else if ((coupon.CompareTo(coupomCollection[i])) != 0)
+                {
+                    int[] coupunCollection = new int[i];
+                    coupomCollection[i] = coupon;
+                    i++;
+                }
             }
-            Console.WriteLine(Reverse + " is reverse number");
-            Console.ReadLine();
-
+            foreach (int i in coupomCollection)
+            {
+                Console.WriteLine("Coupons Collection : " + i + " ");
+            }
         }
+
     }
+    
 }
 

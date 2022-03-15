@@ -11,7 +11,7 @@ namespace LogicalProgramming
         static void Main(string[] args)
         { 
             LogicalProgram logical = new LogicalProgram();
-            logical.Reverse();
+            logical.CouponsNumbers();
             Console.ReadLine();
             
         }
